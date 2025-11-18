@@ -1,0 +1,7 @@
+pyirsdk
+pandas
+scipy
+numpy 
+scikit-learn
+matplotlib
+
