@@ -9,6 +9,26 @@ This repository contains the source code and analysis for a study on **human per
 
 By analyzing 80 consecutive laps in **iRacing**, we investigate whether an expert pilot behaves as a **Wide-Sense Stationary (WSS)** system and how **Information Theory (Shannon Entropy)** can quantify cognitive load on the track.
 
+## 🛠️ Installation & Configuration
+
+To replicate this analysis, you need **Python 3.8+**. It is recommended to use a virtual environment to isolate dependencies.
+
+### 1. Setup Environment
+Run the following commands in your terminal:
+
+```bash
+# Clone the repository
+git clone [https://github.com/TomazFilgueira/UFRN--PPGEEC2317-SISTEMAS-PROBABILISTICOS.git](https://github.com/TomazFilgueira/UFRN--PPGEEC2317-SISTEMAS-PROBABILISTICOS.git)
+cd stochastic-sim-racing
+
+# Create a virtual environment (Optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install required libraries
+pip install -r requirements.txt
+```
+
 ## 🧪 The Experiment
 To ensure data quality and replicability, the experiment transformed the simulator into a controlled data laboratory:
 
@@ -18,8 +38,8 @@ To ensure data quality and replicability, the experiment transformed the simulat
 * **Sample Size:** 80 consecutive valid laps ($N=80$) to allow for long-term stationarity tests.
 
 <p align="center">
-  <img src="img/global_mazda.png" width="45%" />
-  <img src="img/charlotte_aerea.png" width="45%" /> 
+  <img src="processos_estocasticos/img/global_mazda.png" width="45%" />
+  <img src="processos_estocasticos/img/charlotte_aerea.jpeg" width="45%" /> 
 </p>
 <p align="center">
   <em>Figure 1: Experimental Setup. Left: The Mazda MX-5 Global Cup car. Right: Aerial view of the Charlotte Roval circuit.</em>
@@ -57,10 +77,16 @@ Despite the deterministic trend of fuel consumption (which lightens the car and 
 We discovered that the moment of **maximum physical instability** (highest G-force variance at $t=6.3s$) **did not** coincide with the moment of **maximum entropy**.
 * **Interpretation:** Even when the car is physically unstable (oscillating at the limit of grip), the expert pilot maintains cognitive control. The inputs are reactive but not random.
 
+![Entropy Map](processos_estocasticos/img/curva_variancia.png)
+*Detail of maximum variance point*
+
+![Entropy Map](processos_estocasticos/img/curvas_entropia.png)
+*Plot of entropy*
+
 ### 3. Entropy Mapping
 By projecting entropy values onto the track coordinates, we created a "Cognitive Heatmap". Red zones (High Entropy) perfectly align with braking zones and corner apexes, while straights remain low entropy.
 
-![Entropy Map](images/entropy_map.png)
+![Entropy Map](processos_estocasticos/img/entropia_pista.png)
 *Figure: Spatial mapping of Shannon Entropy. Darker red indicates higher cognitive load/uncertainty.*
 
 ### 4. Ergodicity and Learning
