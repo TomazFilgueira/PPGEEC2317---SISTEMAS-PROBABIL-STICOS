@@ -96,19 +96,4 @@ The Autocorrelation Function (ACF) revealed a dual nature of driving:
 
 ---
 
-## 📂 Project Structure
 
-```bash
-├── data/
-│   ├── raw/                 # Original .ibt telemetry files
-│   └── processed/           # Cleaned CSVs (80 laps)
-├── notebooks/
-│   ├── 01_Exploratory_Data_Analysis.ipynb
-│   ├── 02_Stationarity_Tests.ipynb
-│   └── 03_Entropy_and_Ergodicity.ipynb
-├── images/                  # Generated plots (KDE, Maps, ACF)
-├── src/
-│   ├── loader.py            # iRacing telemetry parser
-│   └── math_tools.py        # Entropy and Statistical functions
-├── README.md
-└── requirements.txt
